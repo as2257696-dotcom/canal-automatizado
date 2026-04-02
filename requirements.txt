@@ -1,11 +1,12 @@
 flask
 edge-tts
 requests
-moviepy
+moviepy==1.0.3
 dropbox
 Pillow
-numpy
-imageio
-imageio-ffmpeg
-decorator
+numpy==1.24.4
+imageio==2.27.0
+imageio-ffmpeg==0.4.9
+decorator==4.4.2
 tqdm
+proglog
