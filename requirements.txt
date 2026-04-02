@@ -3,8 +3,8 @@ edge-tts==6.1.9
 requests==2.31.0
 moviepy==1.0.3
 dropbox==11.36.2
-Pillow
-numpy
+Pillow==10.2.0
+numpy==1.26.4
 imageio==2.31.1
 imageio-ffmpeg==0.4.9
 decorator==4.4.2
