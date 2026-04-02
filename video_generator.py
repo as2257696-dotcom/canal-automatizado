@@ -128,9 +128,26 @@ def subir_a_dropbox(ruta_local, nombre_archivo):
 
 @app.route("/generar", methods=["POST"])
 def generar_video():
-    data  = request.json
+    data  = request.get_json(force=True, silent=True) or {}
     guion = request.form.get("guion") or (request.json or {}).get("guion", "")
     tema  = request.form.get("tema") or (request.json or {}).get("tema", "Automoviles")
+    ```
+
+---
+
+## En Make cambia el módulo 3
+
+Regresa a **application/json** y en el body pon:
+
+1. **Body content type** → `application/json`
+2. **Body input method** → `String`
+3. En el body escribe solo esto sin comillas alrededor de la variable:
+```
+{"guion": 
+```
+Luego mapea `guion_limpio` y cierra:
+```
+, "tema": "Automoviles"}
     if not guion:
         return jsonify({"error": "No se recibió guión"}), 400
 
