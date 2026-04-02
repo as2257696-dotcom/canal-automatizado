@@ -129,8 +129,8 @@ def subir_a_dropbox(ruta_local, nombre_archivo):
 @app.route("/generar", methods=["POST"])
 def generar_video():
     data  = request.json
-    guion = data.get("guion", "")
-    tema  = data.get("tema", "naturaleza")
+    guion = request.form.get("guion") or (request.json or {}).get("guion", "")
+    tema  = request.form.get("tema") or (request.json or {}).get("tema", "Automoviles")
     if not guion:
         return jsonify({"error": "No se recibió guión"}), 400
 
